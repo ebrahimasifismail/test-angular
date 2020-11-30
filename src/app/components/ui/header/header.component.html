@@ -1,0 +1,42 @@
+<div class="top-nav">
+    <div  class="nav-logo">
+        <!-- <button class="nav-trigger">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
+                <g class="style-scope yt-icon">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" class="style-scope yt-icon"></path>
+                </g>
+            </svg>
+        </button> -->
+    </div>
+    <!-- page title -->
+    <span class="page-title"></span>
+    <!-- user links -->
+    <div class="user-info">
+        <div class="dropdown">
+            <button class=" dropdown-toggle" type="button" data-toggle="dropdown"><span class="user-n">Jane Doe </span> <img
+                    src="/assets/img/user-d.webp" />
+            </button>
+            <ul class="dropdown-menu">
+                <ng-container >
+                    <li>
+                        <a ><i class="fas fa-user"></i>profile</a>
+                    </li>
+                    <!-- <li>
+                        <a [routerLink]="['/admin/change-password']"><i class="fas fa-key"></i>change password</a>
+                    </li> -->
+                </ng-container>
+                <ng-template #normalUser>
+                    <li>
+                        <a ><i class="fas fa-user"></i>profile</a>
+                    </li>
+                    <!-- <li>
+                        <a [routerLink]="['/home/change-password']"><i class="fas fa-key"></i>change password</a>
+                    </li> -->
+                </ng-template>
+                <li>
+                    <a (click)="logoutUser()" href="javascript:void(0)"><i class="fas fa-sign-out-alt"></i>logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

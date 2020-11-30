@@ -1,0 +1,54 @@
+.sidebar-submenu {
+    display: none;
+    background: #133567;
+    position: relative;
+    z-index: 500;
+  }
+  .sidebar-dropdown:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-style: normal;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background: 0 0;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #fff;
+  }
+  .sidebar-dropdown {
+    position: relative;
+  }
+  .sidebar-dropdown.active:after {
+    transform: rotate(90deg);
+    right: 17px;
+  }
+  .sidebar-submenu a {
+    padding-left: 75px;
+  }
+  .sidebar-dropdown:hover:after {
+    color: #fff;
+  }
+  .sidebar-submenu ul li:hover {
+    color: red;
+  }
+  a.sidebar-dropdown {
+    color: #fff !important;
+    cursor: pointer;
+  }
+  a.sidebar-dropdown.not {
+    color: #0a4e9b;
+  }
+  a.sidebar-dropdown:hover, a.sidebar-dropdown.active {
+    color: #fff !important;
+  }
+  .side-bar ul li a.active svg path {
+    fill: #fff !important;
+  }
+  

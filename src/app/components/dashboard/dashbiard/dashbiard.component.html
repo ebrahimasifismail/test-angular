@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="content">    
+    <div class="angular-material-table example-container mat-elevation-z8">
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-paginator [length]="totalTableEntries" (page)="paginatorEvent($event)" [pageSize]="PAGESIZE"
+                     class="left-align"></mat-paginator>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input #search type="text" placeholder="Search" class="angular-search">
+                    <a *ngIf="search?.value.length > 1" title="Clear Search" (click)="clearSearch(true)" href="javascript:void(0)"
+                        class="angular-search-close">x</a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <table mat-table matSort [dataSource]="matTableDataSource">
+            <!-- no -->
+            <ng-container matColumnDef="name" sticky>
+                        <th  mat-header-cell *matHeaderCellDef style="font-size: 12px;">Name</th>
+                        <td  mat-cell *matCellDef="let element" ><div style="width: 150px;word-break: break-all;">{{ element.name }}</div></td>
+                    </ng-container>
+            <ng-container matColumnDef="age" sticky>
+                <th  mat-header-cell *matHeaderCellDef appSortHeading (sortResult)="getSortData($event)">Age</th>
+                <td mat-cell *matCellDef="let element"><div style="width: 150px;word-break: break-all;">{{ element.age }}</div></td>
+            </ng-container>
+
+            <ng-container matColumnDef="location" sticky>
+                <th  mat-header-cell *matHeaderCellDef appSortHeading (sortResult)="getSortData($event)">Location</th>
+                <td mat-cell *matCellDef="let element"><div style="width: 150px;word-break: break-all;">{{ element.location }}</div></td>
+            </ng-container>
+            
+            
+            <!-- content rows -->
+            <ng-container matColumnDef="star" stickyEnd>
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                </td>
+              </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+        </table>
+    </div>
+    
+</div>
